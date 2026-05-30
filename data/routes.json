@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "Medina Sunset Walk",
+    "description": "A magical evening stroll through the historic medina, ending with sunset views and dinner.",
+    "duration": "3 hours",
+    "stops": [
+      "Jemaa el-Fnaa",
+      "Souks of Marrakech",
+      "Terrasse des Epices",
+      "Koutoubia Mosque"
+    ],
+    "recommendation": "Start in the early evening to experience the medina's vibrant energy as the sun sets. Perfect for photography and local atmosphere.",
+    "best_time": "5:00 PM - 8:00 PM",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 2,
+    "name": "Historical Marrakech Tour",
+    "description": "Explore the rich history and architecture of Marrakech's most iconic monuments.",
+    "duration": "4 hours",
+    "stops": [
+      "Bahia Palace",
+      "Dar Si Said Museum",
+      "Saadian Tombs",
+      "Kasbah Mosque"
+    ],
+    "recommendation": "Visit in the morning when sites are less crowded and the light is ideal for photography. Wear comfortable shoes.",
+    "best_time": "9:00 AM - 1:00 PM",
+    "difficulty": "Moderate"
+  },
+  {
+    "id": 3,
+    "name": "Rooftop Night Experience",
+    "description": "Discover Marrakech's best rooftop bars and restaurants with views of the medina.",
+    "duration": "4 hours",
+    "stops": [
+      "Terrasse des Epices",
+      "Riad Karmela",
+      "Cafe Arabe",
+      "Jemaa el-Fnaa"
+    ],
+    "recommendation": "Start with sunset drinks at Terrasse des Epices, then move to a more intimate rooftop bar. A polished evening route.",
+    "best_time": "5:00 PM - 10:00 PM",
+    "difficulty": "Easy"
+  },
+  {
+    "id": 4,
+    "name": "Luxury Wellness Day",
+    "description": "Rejuvenate with traditional Moroccan hammams, spa treatments, and quieter garden time.",
+    "duration": "6 hours",
+    "stops": [
+      "Hammam Dar el Bacha",
+      "Spa Medina",
+      "Cafe Arabe",
+      "Majorelle Garden"
+    ],
+    "recommendation": "Book spa treatments in advance. Start early with a hammam, then slow the pace with lunch and gardens.",
+    "best_time": "9:00 AM - 3:00 PM",
+    "difficulty": "Easy"
+  }
+]

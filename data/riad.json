@@ -1,0 +1,35 @@
+{
+  "id": "riad-dar-blanche",
+  "name": "Riad Dar Blanche",
+  "description": "Suites & Spa in a quiet, secure part of Marrakech's Medina, close to Djemaa El Fna and local amenities.",
+  "coordinates": [31.6355902, -7.991628],
+  "address": "179 Derb Sidi Ahmed Soussi, Quartier Sidi Benslimane Medina, 40000 Marrakech, Morocco",
+  "phone": "+212 524 383087",
+  "email": "contact.riaddarblanche@gmail.com",
+  "whatsapp": "",
+  "website": "https://riad-dar-blanche.com/en/",
+  "google_maps": "https://www.google.com/maps/place/Riad+Dar+Blanche/@31.6355902,-7.9942029,17z/data=!3m1!4b1!4m9!3m8!1s0xdafeffae6978b0d:0x9a580d7beb2bf995!5m2!4m1!1i2!8m2!3d31.6355902!4d-7.991628!16s%2Fg%2F11s4457y3j",
+  "image": "/riad-dar-blanche/hero_home_1.jpg",
+  "gallery": [
+    "/riad-dar-blanche/galerie-1.jpg",
+    "/riad-dar-blanche/galerie-2.jpg",
+    "/riad-dar-blanche/galerie-3.jpg",
+    "/riad-dar-blanche/galerie-4.jpg",
+    "/riad-dar-blanche/galerie-5.jpg",
+    "/riad-dar-blanche/galerie-6.jpg",
+    "/riad-dar-blanche/galerie-7.jpg",
+    "/riad-dar-blanche/galerie-8.jpg"
+  ],
+  "amenities": [
+    "Rooftop terrace",
+    "Swimming pool",
+    "Restaurant",
+    "Spa",
+    "Concierge service",
+    "WiFi",
+    "Air conditioning"
+  ],
+  "checkin_time": "15:00",
+  "checkout_time": "11:00",
+  "languages": ["English", "French"]
+}

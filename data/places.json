@@ -1,0 +1,342 @@
+[
+  {
+    "id": 1,
+    "name": "Bahia Palace",
+    "category": "Historical",
+    "area": "Medina",
+    "coordinates": [
+      31.6295,
+      -7.9811
+    ],
+    "description": "Historic 19th-century Moroccan palace with stunning architecture, intricate tilework, and lush gardens. A masterpiece of traditional Moroccan design.",
+    "best_time": "Morning (9-11 AM)",
+    "budget": "Low",
+    "google_maps": "https://maps.google.com/?q=Bahia+Palace+Marrakech",
+    "image": "/local-favorites/bahia-palace.webp",
+    "featured": true,
+    "local_favorite": true
+  },
+  {
+    "id": 2,
+    "name": "Jemaa el-Fnaa",
+    "category": "Must See",
+    "area": "Medina",
+    "coordinates": [
+      31.6295,
+      -7.9844
+    ],
+    "description": "The vibrant heart of Marrakech. Experience snake charmers, storytellers, musicians, and street food vendors in this iconic square.",
+    "best_time": "Evening (6-8 PM)",
+    "budget": "Low",
+    "google_maps": "https://maps.google.com/?q=Jemaa+el-Fnaa+Marrakech",
+    "image": "/nearby/jemaa-el-fnaa.jpg",
+    "featured": true,
+    "local_favorite": false
+  },
+  {
+    "id": 3,
+    "name": "Koutoubia Mosque",
+    "category": "Historical",
+    "area": "Medina",
+    "coordinates": [
+      31.6246,
+      -7.9881
+    ],
+    "description": "The most iconic mosque in Marrakech with its stunning red minaret visible from across the city. Beautiful gardens surround the exterior.",
+    "best_time": "Sunset (5-6 PM)",
+    "budget": "Free",
+    "google_maps": "https://maps.google.com/?q=Koutoubia+Mosque+Marrakech",
+    "image": "/nearby/riad-dar-anika.jpg",
+    "featured": true,
+    "local_favorite": false
+  },
+  {
+    "id": 4,
+    "name": "Dar Si Said Museum",
+    "category": "Historical",
+    "area": "Medina",
+    "coordinates": [
+      31.6255,
+      -7.9755
+    ],
+    "description": "A beautifully restored 19th-century palace housing Moroccan arts and crafts. Discover traditional textiles, jewelry, and woodwork.",
+    "best_time": "Morning (10 AM-12 PM)",
+    "budget": "Low",
+    "google_maps": "https://maps.google.com/?q=Dar+Si+Said+Museum+Marrakech",
+    "image": "/nearby/hammam-dar-el-bacha.jpg",
+    "featured": false,
+    "local_favorite": false
+  },
+  {
+    "id": 5,
+    "name": "Souks of Marrakech",
+    "category": "Shopping",
+    "area": "Medina",
+    "coordinates": [
+      31.6285,
+      -7.9795
+    ],
+    "description": "Labyrinthine traditional markets filled with spices, textiles, leather goods, and handicrafts. A sensory experience not to be missed.",
+    "best_time": "Morning (9-11 AM)",
+    "budget": "Medium",
+    "google_maps": "https://maps.google.com/?q=Souks+Marrakech",
+    "image": "/local-favorites/souks-marrakech.jpg",
+    "featured": false,
+    "local_favorite": true
+  },
+  {
+    "id": 6,
+    "name": "Riad Dar Anika",
+    "category": "Food",
+    "area": "Medina",
+    "coordinates": [
+      31.631,
+      -7.982
+    ],
+    "description": "Charming traditional riad restaurant serving authentic Moroccan cuisine. Tagines, couscous, and fresh mint tea in a courtyard setting.",
+    "best_time": "Lunch (12-2 PM) or Dinner (7-10 PM)",
+    "budget": "Medium",
+    "google_maps": "https://maps.google.com/?q=Riad+Dar+Anika+Marrakech",
+    "image": "/nearby/riad-dar-anika.jpg",
+    "featured": false,
+    "local_favorite": false
+  },
+  {
+    "id": 7,
+    "name": "Terrasse des \u00c9pices",
+    "category": "Rooftops",
+    "area": "Medina",
+    "coordinates": [
+      31.6288,
+      -7.9805
+    ],
+    "description": "Rooftop restaurant with panoramic views of Jemaa el-Fnaa and the Atlas Mountains. Perfect for sunset drinks and dinner.",
+    "best_time": "Sunset (5-7 PM)",
+    "budget": "Medium",
+    "google_maps": "https://maps.google.com/?q=Terrasse+des+Epices+Marrakech",
+    "image": "/local-favorites/terrasse-des-epices.jpg",
+    "featured": false,
+    "local_favorite": true
+  },
+  {
+    "id": 8,
+    "name": "Hammam Dar el Bacha",
+    "category": "Wellness",
+    "area": "Medina",
+    "coordinates": [
+      31.632,
+      -7.983
+    ],
+    "description": "Traditional Moroccan hammam offering authentic steam baths and massages. A rejuvenating experience in a historic setting.",
+    "best_time": "Morning or Afternoon",
+    "budget": "Low",
+    "google_maps": "https://maps.google.com/?q=Hammam+Dar+el+Bacha+Marrakech",
+    "image": "/nearby/hammam-dar-el-bacha.jpg",
+    "featured": false,
+    "local_favorite": false
+  },
+  {
+    "id": 9,
+    "name": "Pharmacy Centrale",
+    "category": "Essentials",
+    "area": "Medina",
+    "coordinates": [
+      31.627,
+      -7.985
+    ],
+    "description": "Modern pharmacy with English-speaking staff. Located near Jemaa el-Fnaa for convenience.",
+    "best_time": "9 AM - 8 PM",
+    "budget": "Varies",
+    "google_maps": "https://maps.google.com/?q=Pharmacy+Centrale+Marrakech",
+    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-map-bg-dCzyB2S6V8LWiVGKmJPvko.png",
+    "featured": false,
+    "local_favorite": false
+  },
+  {
+    "id": 10,
+    "name": "ATM - Banque Populaire",
+    "category": "Essentials",
+    "area": "Medina",
+    "coordinates": [
+      31.6275,
+      -7.986
+    ],
+    "description": "Reliable ATM with good exchange rates. Located in the heart of the medina.",
+    "best_time": "24/7",
+    "budget": "Free",
+    "google_maps": "https://maps.google.com/?q=Banque+Populaire+Marrakech",
+    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-map-bg-dCzyB2S6V8LWiVGKmJPvko.png",
+    "featured": false,
+    "local_favorite": false
+  },
+  {
+    "id": 11,
+    "name": "Menara Gardens",
+    "category": "Must See",
+    "area": "Ville Nouvelle",
+    "coordinates": [
+      31.6066,
+      -8.0097
+    ],
+    "description": "Stunning gardens with olive groves and a reflecting pool, backed by the snow-capped Atlas Mountains. Perfect for a peaceful afternoon.",
+    "best_time": "Late Afternoon (4-6 PM)",
+    "budget": "Low",
+    "google_maps": "https://maps.google.com/?q=Menara+Gardens+Marrakech",
+    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-rooftop-sunset-CFdpHvJfn5zXpQgTk6v3AA.png",
+    "featured": false,
+    "local_favorite": false
+  },
+  {
+    "id": 12,
+    "name": "Majorelle Garden",
+    "category": "Must See",
+    "area": "Ville Nouvelle",
+    "coordinates": [
+      31.6295,
+      -8.0175
+    ],
+    "description": "A botanical garden featuring exotic plants, a stunning blue villa, and a museum dedicated to Islamic art. A tranquil oasis.",
+    "best_time": "Morning (9-11 AM)",
+    "budget": "Medium",
+    "google_maps": "https://maps.google.com/?q=Majorelle+Garden+Marrakech",
+    "image": "/nearby/spa-medina.jpg",
+    "featured": false,
+    "local_favorite": false
+  },
+  {
+    "id": 13,
+    "name": "Saadian Tombs",
+    "category": "Historical",
+    "area": "Medina",
+    "coordinates": [
+      31.621,
+      -7.9795
+    ],
+    "description": "Ancient royal tombs dating back to the 16th century. Beautifully decorated with intricate zellige tilework and carved plaster.",
+    "best_time": "Morning (10 AM-12 PM)",
+    "budget": "Low",
+    "google_maps": "https://maps.google.com/?q=Saadian+Tombs+Marrakech",
+    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-medina-detail-Aeyi7ExsbATpu3fiRfHr3V.png",
+    "featured": false,
+    "local_favorite": false
+  },
+  {
+    "id": 14,
+    "name": "Kasbah Mosque",
+    "category": "Historical",
+    "area": "Medina",
+    "coordinates": [
+      31.618,
+      -7.982
+    ],
+    "description": "A beautiful mosque with a distinctive green-tiled roof. Located near the Saadian Tombs.",
+    "best_time": "Morning",
+    "budget": "Free",
+    "google_maps": "https://maps.google.com/?q=Kasbah+Mosque+Marrakech",
+    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-rooftop-sunset-CFdpHvJfn5zXpQgTk6v3AA.png",
+    "featured": false,
+    "local_favorite": false
+  },
+  {
+    "id": 15,
+    "name": "Caf\u00e9 Arabe",
+    "category": "Food",
+    "area": "Medina",
+    "coordinates": [
+      31.6305,
+      -7.978
+    ],
+    "description": "Charming caf\u00e9 with a rooftop terrace overlooking the medina. Serves excellent coffee, pastries, and light meals.",
+    "best_time": "Breakfast (8-10 AM) or Afternoon (3-5 PM)",
+    "budget": "Low",
+    "google_maps": "https://maps.google.com/?q=Cafe+Arabe+Marrakech",
+    "image": "/local-favorites/cafe-arabe.jpg",
+    "featured": false,
+    "local_favorite": true
+  },
+  {
+    "id": 16,
+    "name": "Riad Karmela",
+    "category": "Rooftops",
+    "area": "Medina",
+    "coordinates": [
+      31.6315,
+      -7.9825
+    ],
+    "description": "Intimate rooftop bar in a traditional riad. Cocktails, wine, and tapas with views of the medina skyline.",
+    "best_time": "Evening (6-11 PM)",
+    "budget": "Medium",
+    "google_maps": "https://maps.google.com/?q=Riad+Karmela+Marrakech",
+    "image": "/local-favorites/riad-karmela.jpg",
+    "featured": false,
+    "local_favorite": true
+  },
+  {
+    "id": 17,
+    "name": "Spa Medina",
+    "category": "Wellness",
+    "area": "Medina",
+    "coordinates": [
+      31.6325,
+      -7.9815
+    ],
+    "description": "Luxury spa offering traditional Moroccan treatments, massages, and facials. A perfect escape from the bustling medina.",
+    "best_time": "Afternoon (2-6 PM)",
+    "budget": "High",
+    "google_maps": "https://maps.google.com/?q=Spa+Medina+Marrakech",
+    "image": "/nearby/spa-medina.jpg",
+    "featured": false,
+    "local_favorite": false
+  },
+  {
+    "id": 18,
+    "name": "Atlas Mountains Day Trip",
+    "category": "Day Trips",
+    "area": "Outside Medina",
+    "coordinates": [
+      31.55,
+      -7.85
+    ],
+    "description": "Scenic drive to the Atlas Mountains with opportunities for hiking, visiting Berber villages, and enjoying mountain views.",
+    "best_time": "Full Day (8 AM - 5 PM)",
+    "budget": "Medium",
+    "google_maps": "https://maps.google.com/?q=Atlas+Mountains+Marrakech",
+    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-rooftop-sunset-CFdpHvJfn5zXpQgTk6v3AA.png",
+    "featured": false,
+    "local_favorite": false
+  },
+  {
+    "id": 19,
+    "name": "Essaouira Beach",
+    "category": "Day Trips",
+    "area": "Outside Medina",
+    "coordinates": [
+      31.5088,
+      -9.7697
+    ],
+    "description": "Coastal town 3 hours from Marrakech. Beautiful beaches, fresh seafood, and a relaxed atmosphere.",
+    "best_time": "Full Day (8 AM - 5 PM)",
+    "budget": "Medium",
+    "google_maps": "https://maps.google.com/?q=Essaouira+Morocco",
+    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-rooftop-sunset-CFdpHvJfn5zXpQgTk6v3AA.png",
+    "featured": false,
+    "local_favorite": false
+  },
+  {
+    "id": 20,
+    "name": "Ouzoud Waterfalls",
+    "category": "Day Trips",
+    "area": "Outside Medina",
+    "coordinates": [
+      32.05,
+      -6.5
+    ],
+    "description": "Stunning waterfalls in the Middle Atlas Mountains. Hiking, swimming, and picnicking opportunities.",
+    "best_time": "Full Day (8 AM - 5 PM)",
+    "budget": "Low",
+    "google_maps": "https://maps.google.com/?q=Ouzoud+Waterfalls+Morocco",
+    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-rooftop-sunset-CFdpHvJfn5zXpQgTk6v3AA.png",
+    "featured": false,
+    "local_favorite": false
+  }
+]

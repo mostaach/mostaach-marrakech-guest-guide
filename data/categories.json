@@ -1,0 +1,58 @@
+[
+  {
+    "id": "must-see",
+    "name": "Must See",
+    "color": "#B85C3C",
+    "icon": "MapPin",
+    "description": "Essential landmarks and attractions"
+  },
+  {
+    "id": "food",
+    "name": "Food",
+    "color": "#D4A574",
+    "icon": "UtensilsCrossed",
+    "description": "Restaurants and cafes"
+  },
+  {
+    "id": "rooftops",
+    "name": "Rooftops",
+    "color": "#8B9D83",
+    "icon": "Building2",
+    "description": "Rooftop bars and restaurants"
+  },
+  {
+    "id": "shopping",
+    "name": "Shopping",
+    "color": "#C4956E",
+    "icon": "ShoppingBag",
+    "description": "Markets and shops"
+  },
+  {
+    "id": "wellness",
+    "name": "Wellness",
+    "color": "#A89968",
+    "icon": "Spa",
+    "description": "Hammams and spas"
+  },
+  {
+    "id": "historical",
+    "name": "Historical",
+    "color": "#9B6B4F",
+    "icon": "Building",
+    "description": "Historical monuments"
+  },
+  {
+    "id": "essentials",
+    "name": "Essentials",
+    "color": "#7A8B7E",
+    "icon": "AlertCircle",
+    "description": "Pharmacies, ATMs, and utilities"
+  },
+  {
+    "id": "day-trips",
+    "name": "Day Trips",
+    "color": "#B8956E",
+    "icon": "Compass",
+    "description": "Excursions outside the city"
+  }
+]
