@@ -46,7 +46,9 @@
     "best_time": "Sunset (5-6 PM)",
     "budget": "Free",
     "google_maps": "https://maps.google.com/?q=Koutoubia+Mosque+Marrakech",
-    "image": "/nearby/riad-dar-anika.jpg",
+    "image": "/nearby/koutoubia-mosque.jpg",
+    "image_credit": "Photo: Jorge Lascar, CC BY 2.0",
+    "image_credit_url": "https://commons.wikimedia.org/wiki/File:Koutoubia_Mosque_(7161021485).jpg",
     "featured": true,
     "local_favorite": false
   },
