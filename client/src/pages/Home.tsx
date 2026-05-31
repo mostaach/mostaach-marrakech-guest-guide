@@ -26,6 +26,7 @@ import {
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import InteractiveMap from "@/components/InteractiveMap";
+import { track } from "@vercel/analytics";
 import placesData from "../../../data/places.json";
 import routesData from "../../../data/routes.json";
 import categoriesData from "../../../data/categories.json";
@@ -168,6 +169,12 @@ const ui = {
     ambulance: "Ambulance",
     touristPolice: "Tourist Police",
     practicalTips: "Practical Tips",
+    feedbackTitle: "How was this guide?",
+    feedbackCopy:
+      "Your feedback helps us improve the guest guide for future stays.",
+    feedbackThanks: "Thanks for the feedback.",
+    feedbackPlaceholder: "Optional note",
+    feedbackButton: "Send note",
     tips: [
       "Dress modestly when visiting religious sites.",
       "Bargaining is expected in souks.",
@@ -280,6 +287,12 @@ const ui = {
     ambulance: "Ambulance",
     touristPolice: "Police touristique",
     practicalTips: "Conseils pratiques",
+    feedbackTitle: "Comment trouvez-vous ce guide?",
+    feedbackCopy:
+      "Votre avis nous aide a ameliorer le guide pour les prochains sejours.",
+    feedbackThanks: "Merci pour votre avis.",
+    feedbackPlaceholder: "Note optionnelle",
+    feedbackButton: "Envoyer la note",
     tips: [
       "Habillez-vous sobrement pour visiter les sites religieux.",
       "La negociation est habituelle dans les souks.",
@@ -309,6 +322,9 @@ export default function Home() {
   const [showHero, setShowHero] = useState(true);
   const [nearbyPlaces, setNearbyPlaces] = useState<Place[]>([]);
   const [walkablePlaces, setWalkablePlaces] = useState<Place[]>([]);
+  const [feedbackRating, setFeedbackRating] = useState<number | null>(null);
+  const [feedbackNote, setFeedbackNote] = useState("");
+  const [feedbackSent, setFeedbackSent] = useState(false);
   const t = ui[language];
   const hasWhatsapp = whatsappNumber.length > 0;
   const quickInfo = [
@@ -364,6 +380,31 @@ export default function Home() {
   const openTab = (tab: Tab) => {
     setShowHero(false);
     setCurrentTab(tab);
+  };
+
+  const handleFeedbackRating = (rating: number) => {
+    setFeedbackRating(rating);
+    setFeedbackSent(true);
+    track("guide_satisfaction", {
+      rating: String(rating),
+      language,
+    });
+  };
+
+  const feedbackMailto = () => {
+    const subject = encodeURIComponent(
+      `${riadData.name} guest guide feedback`,
+    );
+    const body = encodeURIComponent(
+      [
+        `Rating: ${feedbackRating ?? "Not selected"}/5`,
+        `Language: ${language.toUpperCase()}`,
+        "",
+        feedbackNote,
+      ].join("\n"),
+    );
+
+    return `mailto:${riadData.email}?subject=${subject}&body=${body}`;
   };
 
   const PlaceCard = ({
@@ -917,6 +958,62 @@ export default function Home() {
                     <li key={tip}>{tip}</li>
                   ))}
                 </ul>
+              </Card>
+
+              <Card className="border-[#E0D5C7] bg-white/95 p-4 shadow-sm backdrop-blur-sm">
+                <h3 className="mb-2 flex items-center gap-2 text-lg font-bold text-[#2C2C2C]">
+                  <MessageCircle className="h-5 w-5 text-[#B85C3C]" />
+                  {t.feedbackTitle}
+                </h3>
+                <p className="mb-4 text-sm leading-6 text-[#6B6B6B]">
+                  {t.feedbackCopy}
+                </p>
+
+                <div className="mb-4 grid grid-cols-5 gap-2">
+                  {[1, 2, 3, 4, 5].map((rating) => (
+                    <button
+                      key={rating}
+                      onClick={() => handleFeedbackRating(rating)}
+                      className={`rounded-lg border px-0 py-3 text-sm font-bold transition-all ${
+                        feedbackRating === rating
+                          ? "border-[#B85C3C] bg-[#B85C3C] text-white"
+                          : "border-[#E0D5C7] bg-[#F5F1E8] text-[#2C2C2C] hover:border-[#B85C3C]"
+                      }`}
+                      type="button"
+                      aria-label={`Rate this guide ${rating} out of 5`}
+                    >
+                      {rating}
+                    </button>
+                  ))}
+                </div>
+
+                {feedbackSent && (
+                  <p className="mb-3 rounded-lg bg-[#F5F1E8] px-3 py-2 text-sm font-semibold text-[#8B9D83]">
+                    {t.feedbackThanks}
+                  </p>
+                )}
+
+                <textarea
+                  value={feedbackNote}
+                  onChange={(event) => setFeedbackNote(event.target.value)}
+                  placeholder={t.feedbackPlaceholder}
+                  className="mb-3 min-h-24 w-full rounded-lg border border-[#E0D5C7] bg-white px-3 py-2 text-sm text-[#2C2C2C] outline-none transition-colors placeholder:text-[#9C9184] focus:border-[#B85C3C]"
+                />
+
+                <a
+                  href={feedbackMailto()}
+                  onClick={() => {
+                    track("guide_feedback_email", {
+                      rating: String(feedbackRating ?? "none"),
+                      language,
+                    });
+                    setFeedbackSent(true);
+                  }}
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#B85C3C] px-4 py-3 text-sm font-semibold text-white hover:bg-[#A04A2F]"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  {t.feedbackButton}
+                </a>
               </Card>
             </div>
           )}
