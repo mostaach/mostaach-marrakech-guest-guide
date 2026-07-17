@@ -12,7 +12,7 @@
     "best_time": "Morning (9-11 AM)",
     "budget": "Low",
     "google_maps": "https://maps.google.com/?q=Bahia+Palace+Marrakech",
-    "image": "/local-favorites/bahia-palace.webp",
+    "image": "/photo/palais-Bahia-Bahia-Palace-2-scaled.jpeg",
     "featured": true,
     "local_favorite": true
   },
@@ -29,7 +29,7 @@
     "best_time": "Evening (6-8 PM)",
     "budget": "Low",
     "google_maps": "https://maps.google.com/?q=Jemaa+el-Fnaa+Marrakech",
-    "image": "/nearby/jemaa-el-fnaa.jpg",
+    "image": "/photo/Place-Jemaa-El-Fna-Marrakech-tombée-de-la-Nuit.webp",
     "featured": true,
     "local_favorite": false
   },
@@ -46,27 +46,10 @@
     "best_time": "Sunset (5-6 PM)",
     "budget": "Free",
     "google_maps": "https://maps.google.com/?q=Koutoubia+Mosque+Marrakech",
-    "image": "/nearby/koutoubia-mosque.jpg",
+    "image": "/photo/Koutoubia-Marrakech.webp",
     "image_credit": "Photo: Jorge Lascar, CC BY 2.0",
     "image_credit_url": "https://commons.wikimedia.org/wiki/File:Koutoubia_Mosque_(7161021485).jpg",
     "featured": true,
-    "local_favorite": false
-  },
-  {
-    "id": 4,
-    "name": "Dar Si Said Museum",
-    "category": "Historical",
-    "area": "Medina",
-    "coordinates": [
-      31.6255,
-      -7.9755
-    ],
-    "description": "A beautifully restored 19th-century palace housing Moroccan arts and crafts. Discover traditional textiles, jewelry, and woodwork.",
-    "best_time": "Morning (10 AM-12 PM)",
-    "budget": "Low",
-    "google_maps": "https://maps.google.com/?q=Dar+Si+Said+Museum+Marrakech",
-    "image": "/nearby/hammam-dar-el-bacha.jpg",
-    "featured": false,
     "local_favorite": false
   },
   {
@@ -82,30 +65,34 @@
     "best_time": "Morning (9-11 AM)",
     "budget": "Medium",
     "google_maps": "https://maps.google.com/?q=Souks+Marrakech",
-    "image": "/local-favorites/souks-marrakech.jpg",
+    "image": "/photo/Souks-of-Marrakech.jpg",
     "featured": false,
     "local_favorite": true
   },
   {
     "id": 6,
-    "name": "Riad Dar Anika",
+    "name": "Riad Dar Blanch Restaurant",
     "category": "Food",
     "area": "Medina",
     "coordinates": [
       31.631,
       -7.982
     ],
-    "description": "Charming traditional riad restaurant serving authentic Moroccan cuisine. Tagines, couscous, and fresh mint tea in a courtyard setting.",
+    "description": "Charming traditional restaurant serving authentic Moroccan cuisine within Riad Dar Blanch. Tagines, couscous, and fresh mint tea in a beautiful setting.",
     "best_time": "Lunch (12-2 PM) or Dinner (7-10 PM)",
     "budget": "Medium",
     "google_maps": "https://maps.google.com/?q=Riad+Dar+Anika+Marrakech",
-    "image": "/nearby/riad-dar-anika.jpg",
+    "image": "/photo/Riad-Dar-Blanch-Restaurant.jpg",
     "featured": false,
-    "local_favorite": false
+    "local_favorite": false,
+    "action_link": "https://room-swift-nu.vercel.app/guest",
+    "action_text": "Order Room Service",
+    "in_house": true,
+    "is_order_system": true
   },
   {
     "id": 7,
-    "name": "Terrasse des \u00c9pices",
+    "name": "Terrasse des Épices",
     "category": "Rooftops",
     "area": "Medina",
     "coordinates": [
@@ -116,7 +103,7 @@
     "best_time": "Sunset (5-7 PM)",
     "budget": "Medium",
     "google_maps": "https://maps.google.com/?q=Terrasse+des+Epices+Marrakech",
-    "image": "/local-favorites/terrasse-des-epices.jpg",
+    "image": "/photo/Terrasse-des-Épices.jpg",
     "featured": false,
     "local_favorite": true
   },
@@ -133,7 +120,7 @@
     "best_time": "Morning or Afternoon",
     "budget": "Low",
     "google_maps": "https://maps.google.com/?q=Hammam+Dar+el+Bacha+Marrakech",
-    "image": "/nearby/hammam-dar-el-bacha.jpg",
+    "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
     "featured": false,
     "local_favorite": false
   },
@@ -150,7 +137,7 @@
     "best_time": "9 AM - 8 PM",
     "budget": "Varies",
     "google_maps": "https://maps.google.com/?q=Pharmacy+Centrale+Marrakech",
-    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-map-bg-dCzyB2S6V8LWiVGKmJPvko.png",
+    "image": "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&q=80",
     "featured": false,
     "local_favorite": false
   },
@@ -167,7 +154,7 @@
     "best_time": "24/7",
     "budget": "Free",
     "google_maps": "https://maps.google.com/?q=Banque+Populaire+Marrakech",
-    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-map-bg-dCzyB2S6V8LWiVGKmJPvko.png",
+    "image": "https://images.unsplash.com/photo-1616805125345-0d2975c6218e?w=800&q=80",
     "featured": false,
     "local_favorite": false
   },
@@ -184,7 +171,7 @@
     "best_time": "Late Afternoon (4-6 PM)",
     "budget": "Low",
     "google_maps": "https://maps.google.com/?q=Menara+Gardens+Marrakech",
-    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-rooftop-sunset-CFdpHvJfn5zXpQgTk6v3AA.png",
+    "image": "/photo/jardines-de-la-menara.jpg",
     "featured": false,
     "local_favorite": false
   },
@@ -201,7 +188,7 @@
     "best_time": "Morning (9-11 AM)",
     "budget": "Medium",
     "google_maps": "https://maps.google.com/?q=Majorelle+Garden+Marrakech",
-    "image": "/nearby/spa-medina.jpg",
+    "image": "/photo/Majorelle-Garden.jpeg",
     "featured": false,
     "local_favorite": false
   },
@@ -218,7 +205,7 @@
     "best_time": "Morning (10 AM-12 PM)",
     "budget": "Low",
     "google_maps": "https://maps.google.com/?q=Saadian+Tombs+Marrakech",
-    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-medina-detail-Aeyi7ExsbATpu3fiRfHr3V.png",
+    "image": "/photo/saadian-tombs.jpg",
     "featured": false,
     "local_favorite": false
   },
@@ -235,24 +222,24 @@
     "best_time": "Morning",
     "budget": "Free",
     "google_maps": "https://maps.google.com/?q=Kasbah+Mosque+Marrakech",
-    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-rooftop-sunset-CFdpHvJfn5zXpQgTk6v3AA.png",
+    "image": "/photo/Kasbah_Mosque_large.webp",
     "featured": false,
     "local_favorite": false
   },
   {
     "id": 15,
-    "name": "Caf\u00e9 Arabe",
+    "name": "Café Arabe",
     "category": "Food",
     "area": "Medina",
     "coordinates": [
       31.6305,
       -7.978
     ],
-    "description": "Charming caf\u00e9 with a rooftop terrace overlooking the medina. Serves excellent coffee, pastries, and light meals.",
+    "description": "Charming café with a rooftop terrace overlooking the medina. Serves excellent coffee, pastries, and light meals.",
     "best_time": "Breakfast (8-10 AM) or Afternoon (3-5 PM)",
     "budget": "Low",
     "google_maps": "https://maps.google.com/?q=Cafe+Arabe+Marrakech",
-    "image": "/local-favorites/cafe-arabe.jpg",
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800&q=80",
     "featured": false,
     "local_favorite": true
   },
@@ -269,26 +256,29 @@
     "best_time": "Evening (6-11 PM)",
     "budget": "Medium",
     "google_maps": "https://maps.google.com/?q=Riad+Karmela+Marrakech",
-    "image": "/local-favorites/riad-karmela.jpg",
+    "image": "/photo/Riad-Karmela.jpg",
     "featured": false,
     "local_favorite": true
   },
   {
     "id": 17,
-    "name": "Spa Medina",
+    "name": "Riad Dar Blanch Spa",
     "category": "Wellness",
     "area": "Medina",
     "coordinates": [
       31.6325,
       -7.9815
     ],
-    "description": "Luxury spa offering traditional Moroccan treatments, massages, and facials. A perfect escape from the bustling medina.",
+    "description": "Luxury in-house spa offering traditional Moroccan treatments, hammam, and massages exclusively at Riad Dar Blanch.",
     "best_time": "Afternoon (2-6 PM)",
     "budget": "High",
     "google_maps": "https://maps.google.com/?q=Spa+Medina+Marrakech",
-    "image": "/nearby/spa-medina.jpg",
+    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80",
     "featured": false,
-    "local_favorite": false
+    "local_favorite": false,
+    "in_house": true,
+    "action_text": "Coming Soon",
+    "action_link": "#"
   },
   {
     "id": 18,
@@ -303,7 +293,7 @@
     "best_time": "Full Day (8 AM - 5 PM)",
     "budget": "Medium",
     "google_maps": "https://maps.google.com/?q=Atlas+Mountains+Marrakech",
-    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-rooftop-sunset-CFdpHvJfn5zXpQgTk6v3AA.png",
+    "image": "https://images.unsplash.com/photo-1516086207797-42216839ea0c?w=800&q=80",
     "featured": false,
     "local_favorite": false
   },
@@ -320,7 +310,7 @@
     "best_time": "Full Day (8 AM - 5 PM)",
     "budget": "Medium",
     "google_maps": "https://maps.google.com/?q=Essaouira+Morocco",
-    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-rooftop-sunset-CFdpHvJfn5zXpQgTk6v3AA.png",
+    "image": "https://images.unsplash.com/photo-1552554605-779cb0a83151?w=800&q=80",
     "featured": false,
     "local_favorite": false
   },
@@ -337,8 +327,93 @@
     "best_time": "Full Day (8 AM - 5 PM)",
     "budget": "Low",
     "google_maps": "https://maps.google.com/?q=Ouzoud+Waterfalls+Morocco",
-    "image": "https://d2xsxph8kpxj0f.cloudfront.net/310519663292149820/SKBb2DRJKfjTdkmoZ35ntc/marrakech-rooftop-sunset-CFdpHvJfn5zXpQgTk6v3AA.png",
+    "image": "https://images.unsplash.com/photo-1558284562-63b78241b714?w=800&q=80",
     "featured": false,
     "local_favorite": false
+  },
+  {
+    "id": 21,
+    "name": "Hotel Ali Currency Exchange",
+    "category": "Essentials",
+    "area": "Medina",
+    "coordinates": [
+      31.6253,
+      -7.9892
+    ],
+    "description": "Known for having the best exchange rates in Marrakech with no hidden commission. Highly recommended for getting your first Moroccan Dirhams.",
+    "best_time": "9 AM - 8 PM",
+    "budget": "Free",
+    "google_maps": "https://maps.app.goo.gl/HotelAliExchange",
+    "image": "/photo/Hotel-Ali-Currency-Exchange.jpg",
+    "featured": true,
+    "local_favorite": true
+  },
+  {
+    "id": 22,
+    "name": "Orange Telecom Store",
+    "category": "Essentials",
+    "area": "Gueliz",
+    "coordinates": [
+      31.6322,
+      -8.0125
+    ],
+    "description": "Official Orange store. Get your tourist SIM card here to ensure 4G data access during your stay. Bring your passport for registration.",
+    "best_time": "9 AM - 7 PM (Closed Sundays)",
+    "budget": "Low",
+    "google_maps": "https://maps.app.goo.gl/OrangeMarrakech",
+    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&auto=format&fit=crop&q=60",
+    "featured": true,
+    "local_favorite": false
+  },
+  {
+    "id": 23,
+    "name": "Carrefour Market",
+    "category": "Essentials",
+    "area": "Medina Edge",
+    "coordinates": [
+      31.624,
+      -8
+    ],
+    "description": "Large modern supermarket just outside the Medina. Perfect for stocking up on bottled water, snacks, sunscreen, and familiar toiletries.",
+    "best_time": "8:30 AM - 10 PM",
+    "budget": "Low",
+    "google_maps": "https://maps.app.goo.gl/CarrefourMarrakech",
+    "image": "https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=800&auto=format&fit=crop&q=60",
+    "featured": false,
+    "local_favorite": true
+  },
+  {
+    "id": 24,
+    "name": "Official Petit Taxi Rank",
+    "category": "Essentials",
+    "area": "Koutoubia",
+    "coordinates": [
+      31.6248,
+      -7.9895
+    ],
+    "description": "Official taxi rank near Koutoubia Mosque. Insist on using the meter (compteur) during the day. Minimum fare is usually 7 MAD.",
+    "best_time": "24/7",
+    "budget": "Low",
+    "google_maps": "https://maps.app.goo.gl/TaxiRankMarrakech",
+    "image": "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&auto=format&fit=crop&q=60",
+    "featured": true,
+    "local_favorite": false
+  },
+  {
+    "id": 25,
+    "name": "Le Jardin",
+    "category": "Food",
+    "area": "Medina",
+    "coordinates": [
+      31.63,
+      -7.985
+    ],
+    "description": "A beautiful, lush courtyard restaurant in the medina. The perfect, relaxing first-night dinner spot. A mix of Moroccan and international dishes.",
+    "best_time": "Dinner (7 PM - 10 PM) - Reservation Recommended",
+    "budget": "High",
+    "google_maps": "https://maps.app.goo.gl/LeJardinMarrakech",
+    "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop&q=60",
+    "featured": true,
+    "local_favorite": true
   }
 ]

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   AlertCircle,
   BaggageClaim,
@@ -26,6 +27,8 @@ import {
 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import InteractiveMap from "@/components/InteractiveMap";
+import CurrencyConverter from "@/components/CurrencyConverter";
+import WeatherWidget from "@/components/WeatherWidget";
 import { track } from "@vercel/analytics";
 import placesData from "../../../data/places.json";
 import routesData from "../../../data/routes.json";
@@ -52,6 +55,9 @@ interface Place {
   local_favorite: boolean;
   google_maps: string;
   image: string;
+  action_link?: string;
+  action_text?: string;
+  in_house?: boolean;
 }
 
 interface Route {
@@ -325,6 +331,7 @@ export default function Home() {
   const [feedbackRating, setFeedbackRating] = useState<number | null>(null);
   const [feedbackNote, setFeedbackNote] = useState("");
   const [feedbackSent, setFeedbackSent] = useState(false);
+  const [selectedRoom, setSelectedRoom] = useState<string>("1");
   const t = ui[language];
   const hasWhatsapp = whatsappNumber.length > 0;
   const quickInfo = [
@@ -424,69 +431,109 @@ export default function Home() {
     const taxiTime = estimateTaxiTime(distance);
 
     return (
-      <Card
-        className="overflow-hidden border-[#E0D5C7] bg-white/95 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-        onClick={() => setSelectedPlace(place)}
+      <motion.div
+        layout
+        initial={{ opacity: 0, y: 15 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
       >
-        <button className="block w-full text-left" type="button">
-          <div className="relative h-40 overflow-hidden bg-[#E8D4B8]">
-            <img
-              src={place.image}
-              alt={place.name}
-              className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
-            />
-            <div className="absolute right-2 top-2 flex gap-1">
-              {place.featured && (
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#B85C3C] px-2 py-1 text-xs text-white">
-                  <Star className="h-3 w-3 fill-current" />
-                  Featured
-                </span>
+        <Card
+          className="overflow-hidden border-[#E0D5C7] bg-white/95 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+          onClick={() => setSelectedPlace(place)}
+        >
+          <button className="block w-full text-left" type="button">
+            <div className="relative h-40 overflow-hidden bg-[#E8D4B8]">
+              <img
+                src={place.image}
+                alt={place.name}
+                className="h-full w-full object-cover transition-transform duration-500 hover:scale-110"
+              />
+              <div className="absolute right-2 top-2 flex gap-1">
+                {place.featured && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-[#B85C3C] px-2 py-1 text-xs font-semibold text-white shadow-md">
+                    <Star className="h-3 w-3 fill-current" />
+                    Featured
+                  </span>
+                )}
+                {place.local_favorite && (
+                  <span className="inline-flex items-center gap-1 rounded-full bg-[#8B9D83] px-2 py-1 text-xs font-semibold text-white shadow-md">
+                    <Heart className="h-3 w-3 fill-current" />
+                    Local
+                  </span>
+                )}
+              </div>
+            </div>
+
+            <div className="p-3">
+              <h3 className="mb-1 text-sm font-bold text-[#2C2C2C]">
+                {place.name}
+              </h3>
+              <p className="mb-2 line-clamp-2 text-xs text-[#6B6B6B]">
+                {place.description}
+              </p>
+
+              {showDistance && !place.in_house && (
+                <div className="mb-2 flex flex-wrap items-center gap-3 text-xs text-[#6B6B6B]">
+                  <span className="inline-flex items-center gap-1">
+                    <Footprints className="h-3.5 w-3.5" />
+                    {walkingTime}m
+                  </span>
+                  <span className="inline-flex items-center gap-1">
+                    <Car className="h-3.5 w-3.5" />
+                    {taxiTime}m
+                  </span>
+                  <span className="font-semibold text-[#B85C3C]">
+                    {place.budget}
+                  </span>
+                </div>
               )}
-              {place.local_favorite && (
-                <span className="inline-flex items-center gap-1 rounded-full bg-[#8B9D83] px-2 py-1 text-xs text-white">
-                  <Heart className="h-3 w-3 fill-current" />
-                  Local
-                </span>
+              
+              {showDistance && place.in_house && (
+                <div className="mb-2 flex flex-wrap items-center gap-3 text-xs text-[#6B6B6B]">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-[#F5F1E8] px-2 py-0.5 text-[#8B9D83] font-semibold">
+                    <HomeIcon className="h-3 w-3" />
+                    In-House
+                  </span>
+                  <span className="font-semibold text-[#B85C3C]">
+                    {place.budget}
+                  </span>
+                </div>
               )}
             </div>
-          </div>
+          </button>
 
-          <div className="p-3">
-            <h3 className="mb-1 text-sm font-bold text-[#2C2C2C]">
-              {place.name}
-            </h3>
-            <p className="mb-2 line-clamp-2 text-xs text-[#6B6B6B]">
-              {place.description}
-            </p>
-
-            {showDistance && (
-              <div className="mb-2 flex flex-wrap items-center gap-3 text-xs text-[#6B6B6B]">
-                <span className="inline-flex items-center gap-1">
-                  <Footprints className="h-3.5 w-3.5" />
-                  {walkingTime}m
-                </span>
-                <span className="inline-flex items-center gap-1">
-                  <Car className="h-3.5 w-3.5" />
-                  {taxiTime}m
-                </span>
-                <span className="font-semibold text-[#B85C3C]">
-                  {place.budget}
-                </span>
-              </div>
-            )}
-          </div>
-        </button>
-
-        <a
-          href={place.google_maps}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mx-3 mb-3 inline-flex text-xs font-semibold text-[#B85C3C] transition-colors hover:text-[#A04A2F]"
-          onClick={(event) => event.stopPropagation()}
-        >
-          {t.viewOnMaps}
-        </a>
-      </Card>
+          {place.is_order_system ? (
+            <button
+              className="mx-3 mb-3 inline-flex text-xs font-semibold text-[#B85C3C] transition-colors hover:text-[#A04A2F]"
+              onClick={(event) => {
+                event.stopPropagation();
+                setSelectedPlace(place);
+              }}
+            >
+              {place.action_text || "Order Room Service"}
+            </button>
+          ) : place.action_link === "#" ? (
+            <span
+              className="mx-3 mb-3 inline-flex items-center gap-1 text-xs font-semibold text-[#8B9D83] cursor-not-allowed"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <Clock className="h-3 w-3" />
+              {place.action_text}
+            </span>
+          ) : (
+            <a
+              href={place.action_link || place.google_maps}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mx-3 mb-3 inline-flex text-xs font-semibold text-[#B85C3C] transition-colors hover:text-[#A04A2F]"
+              onClick={(event) => event.stopPropagation()}
+            >
+              {place.action_text || t.viewOnMaps}
+            </a>
+          )}
+        </Card>
+      </motion.div>
     );
   };
 
@@ -552,8 +599,19 @@ export default function Home() {
 
       {!showHero && (
         <div className="pb-28">
-          {currentTab === "welcome" && (
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentTab}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {currentTab === "welcome" && (
             <div className="space-y-6 p-4 md:p-6">
+              <div className="mx-auto max-w-6xl">
+                <WeatherWidget />
+              </div>
               <section className="mx-auto grid max-w-6xl gap-4 lg:grid-cols-[1.1fr_0.9fr]">
                 <div className="rounded-lg bg-white/90 p-5 shadow-sm ring-1 ring-[#E0D5C7]">
                   <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#B85C3C]">
@@ -686,32 +744,36 @@ export default function Home() {
                   </ul>
                 </Card>
 
-                <Card className="border-[#E0D5C7] bg-white/95 p-4 shadow-sm">
-                  <div className="mb-4 flex items-center gap-2">
-                    <Coffee className="h-5 w-5 text-[#B85C3C]" />
-                    <h3 className="text-xl font-bold text-[#2C2C2C]">
-                      {t.goodToKnow}
-                    </h3>
-                  </div>
-                  <div className="space-y-3">
-                    {essentials.map((item) => {
-                      const Icon = item.icon;
-                      return (
-                        <div key={item.title} className="flex gap-3">
-                          <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[#8B9D83]" />
-                          <div>
-                            <p className="text-sm font-semibold text-[#2C2C2C]">
-                              {item.title}
-                            </p>
-                            <p className="text-xs leading-5 text-[#6B6B6B]">
-                              {item.text}
-                            </p>
+                <div className="flex flex-col gap-4">
+                  <Card className="border-[#E0D5C7] bg-white/95 p-4 shadow-sm">
+                    <div className="mb-4 flex items-center gap-2">
+                      <Coffee className="h-5 w-5 text-[#B85C3C]" />
+                      <h3 className="text-xl font-bold text-[#2C2C2C]">
+                        {t.goodToKnow}
+                      </h3>
+                    </div>
+                    <div className="space-y-3">
+                      {essentials.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                          <div key={item.title} className="flex gap-3">
+                            <Icon className="mt-0.5 h-4 w-4 shrink-0 text-[#8B9D83]" />
+                            <div>
+                              <p className="text-sm font-semibold text-[#2C2C2C]">
+                                {item.title}
+                              </p>
+                              <p className="text-xs leading-5 text-[#6B6B6B]">
+                                {item.text}
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </Card>
+                        );
+                      })}
+                    </div>
+                  </Card>
+                  
+                  <CurrencyConverter />
+                </div>
               </section>
 
               {riadGallery.length > 0 && (
@@ -770,18 +832,21 @@ export default function Home() {
           )}
 
           {currentTab === "map" && (
-            <div className="space-y-4 p-4">
-              <div className="sticky top-0 z-10 rounded-lg bg-white/85 p-4 shadow-lg backdrop-blur-sm">
-                <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-[#2C2C2C]">
-                  {t.filter}
-                </h2>
-                <div className="flex gap-2 overflow-x-auto pb-2">
+            /* Fixed-height column: fills exactly the space between top of page and bottom nav.
+               Bottom nav is ~72px. This layout never scrolls and never overlaps either bar. */
+            <div
+              className="flex flex-col"
+              style={{ height: "calc(100dvh - 72px)" }}
+            >
+              {/* Compact filter strip — shrinks to its content, never pushed by map */}
+              <div className="shrink-0 bg-white/90 px-4 pt-3 pb-2 shadow-md backdrop-blur-sm border-b border-[#E0D5C7]">
+                <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1">
                   <button
                     onClick={() => setSelectedCategory(null)}
-                    className={`whitespace-nowrap rounded-full px-4 py-2 font-semibold transition-all ${
+                    className={`whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-semibold transition-all ${
                       selectedCategory === null
-                        ? "bg-[#B85C3C] text-white"
-                        : "border border-[#E0D5C7] bg-white text-[#2C2C2C]"
+                        ? "bg-[#B85C3C] text-white shadow-sm"
+                        : "border border-[#E0D5C7] bg-white text-[#2C2C2C] hover:border-[#B85C3C]"
                     }`}
                     type="button"
                   >
@@ -791,10 +856,10 @@ export default function Home() {
                     <button
                       key={category.id}
                       onClick={() => setSelectedCategory(category.id)}
-                      className={`whitespace-nowrap rounded-full px-4 py-2 font-semibold transition-all ${
+                      className={`whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-semibold transition-all ${
                         selectedCategory === category.id
-                          ? "text-white"
-                          : "border border-[#E0D5C7] bg-white text-[#2C2C2C]"
+                          ? "text-white shadow-sm"
+                          : "border border-[#E0D5C7] bg-white text-[#2C2C2C] hover:border-[#B85C3C]"
                       }`}
                       style={{
                         backgroundColor:
@@ -814,7 +879,8 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="h-[70vh] min-h-[460px] overflow-hidden rounded-lg shadow-lg">
+              {/* Map fills ALL remaining vertical space — flex-1 + min-h-0 is the key */}
+              <div className="flex-1 min-h-0 overflow-hidden">
                 <InteractiveMap
                   places={placesData}
                   selectedCategory={selectedCategory}
@@ -1017,10 +1083,12 @@ export default function Home() {
               </Card>
             </div>
           )}
-        </div>
-      )}
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  )}
 
-      {!showHero && (
+  {!showHero && (
         <button
           onClick={() => setLanguage(language === "en" ? "fr" : "en")}
           className="fixed right-4 top-4 z-40 rounded-full border border-[#E0D5C7] bg-white/90 px-4 py-2 text-sm font-semibold text-[#2C2C2C] shadow-sm backdrop-blur-sm hover:bg-[#F5F1E8]"
@@ -1078,77 +1146,130 @@ export default function Home() {
         </a>
       )}
 
-      {selectedPlace && (
-        <div
-          className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-4 md:items-center"
-          onClick={() => setSelectedPlace(null)}
-        >
-          <Card
-            className="max-h-[90vh] w-full max-w-2xl overflow-y-auto border-[#E0D5C7] shadow-2xl"
-            onClick={(event) => event.stopPropagation()}
+      <AnimatePresence>
+        {selectedPlace && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex items-end justify-center bg-black/50 p-4 md:items-center"
+            onClick={() => setSelectedPlace(null)}
           >
-            <div className="relative h-64 overflow-hidden md:h-80">
-              <img
-                src={selectedPlace.image}
-                alt={selectedPlace.name}
-                className="h-full w-full object-cover"
-              />
-              <button
-                onClick={() => setSelectedPlace(null)}
-                className="absolute right-4 top-4 rounded-full bg-white/90 p-2 backdrop-blur-sm transition-colors hover:bg-white"
-                type="button"
-                aria-label="Close place details"
-              >
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-
-            <div className="p-6">
-              <div className="mb-4">
-                <h2 className="mb-2 text-3xl font-bold text-[#2C2C2C]">
-                  {selectedPlace.name}
-                </h2>
-                <p className="text-sm font-semibold text-[#8B9D83]">
-                  {selectedPlace.area} / {selectedPlace.category}
-                </p>
-              </div>
-
-              <p className="mb-6 leading-relaxed text-[#6B6B6B]">
-                {selectedPlace.description}
-              </p>
-
-              <div className="mb-6 grid grid-cols-2 gap-4">
-                <div className="rounded-lg bg-[#F5F1E8] p-4">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-[#2C2C2C]">
-                    {t.bestTime}
-                  </p>
-                  <p className="text-sm text-[#6B6B6B]">
-                    {selectedPlace.best_time}
-                  </p>
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.95 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full max-w-2xl"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <Card className="max-h-[90vh] w-full overflow-y-auto border-[#E0D5C7] shadow-2xl">
+                <div className="relative h-64 overflow-hidden md:h-80">
+                  <img
+                    src={selectedPlace.image}
+                    alt={selectedPlace.name}
+                    className="h-full w-full object-cover"
+                  />
+                  <button
+                    onClick={() => setSelectedPlace(null)}
+                    className="absolute right-4 top-4 rounded-full bg-white/90 p-2 backdrop-blur-sm transition-colors hover:bg-white"
+                    type="button"
+                    aria-label="Close place details"
+                  >
+                    <X className="h-5 w-5" />
+                  </button>
                 </div>
-                <div className="rounded-lg bg-[#F5F1E8] p-4">
-                  <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-[#2C2C2C]">
-                    {t.budget}
-                  </p>
-                  <p className="text-sm font-semibold text-[#B85C3C]">
-                    {selectedPlace.budget}
-                  </p>
-                </div>
-              </div>
 
-              <a
-                href={selectedPlace.google_maps}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#B85C3C] px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-[#A04A2F]"
-              >
-                <MapPin className="h-5 w-5" />
-                {t.openInMaps}
-              </a>
-            </div>
-          </Card>
-        </div>
-      )}
+                <div className="p-6">
+                  <div className="mb-4">
+                    <h2 className="mb-2 text-3xl font-bold text-[#2C2C2C]">
+                      {selectedPlace.name}
+                    </h2>
+                    <p className="text-sm font-semibold text-[#8B9D83]">
+                      {selectedPlace.area} / {selectedPlace.category}
+                    </p>
+                  </div>
+
+                  <p className="mb-6 leading-relaxed text-[#6B6B6B]">
+                    {selectedPlace.description}
+                  </p>
+
+                  <div className="mb-6 grid grid-cols-2 gap-4">
+                    <div className="rounded-lg bg-[#F5F1E8] p-4">
+                      <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-[#2C2C2C]">
+                        {t.bestTime}
+                      </p>
+                      <p className="text-sm text-[#6B6B6B]">
+                        {selectedPlace.best_time}
+                      </p>
+                    </div>
+                    <div className="rounded-lg bg-[#F5F1E8] p-4">
+                      <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-[#2C2C2C]">
+                        {t.budget}
+                      </p>
+                      <p className="text-sm font-semibold text-[#B85C3C]">
+                        {selectedPlace.budget}
+                      </p>
+                    </div>
+                  </div>
+
+                  {selectedPlace.is_order_system ? (
+                    <div className="flex flex-col gap-3 rounded-xl border border-[#E0D5C7] bg-[#F5F1E8] p-4">
+                      <p className="text-sm font-bold text-[#2C2C2C]">Where are you ordering from?</p>
+                      <select
+                        value={selectedRoom}
+                        onChange={(e) => setSelectedRoom(e.target.value)}
+                        className="w-full rounded-lg border border-[#E0D5C7] p-2.5 text-sm font-semibold text-[#2C2C2C] focus:border-[#B85C3C] focus:outline-none focus:ring-1 focus:ring-[#B85C3C]"
+                      >
+                        {Array.from({ length: 16 }, (_, i) => i + 1).map((num) => (
+                          <option key={num} value={num.toString()}>
+                            Room {num}
+                          </option>
+                        ))}
+                        <option value="pool">Pool / Courtyard</option>
+                        <option value="rooftop">Rooftop</option>
+                      </select>
+                      <a
+                        href={`${selectedPlace.action_link}?room=${selectedRoom}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-[#B85C3C] px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-[#A04A2F]"
+                      >
+                        <ConciergeBell className="h-5 w-5" />
+                        {selectedPlace.action_text || "Order Room Service"}
+                      </a>
+                    </div>
+                  ) : (
+                    <a
+                      href={selectedPlace.action_link === "#" ? undefined : (selectedPlace.action_link || selectedPlace.google_maps)}
+                      target={selectedPlace.action_link === "#" ? undefined : "_blank"}
+                      rel="noopener noreferrer"
+                      className={`inline-flex w-full items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-white transition-all duration-300 ${
+                        selectedPlace.action_link === "#" 
+                          ? "bg-[#E0D5C7] cursor-not-allowed text-[#6B6B6B]" 
+                          : "bg-[#B85C3C] hover:bg-[#A04A2F]"
+                      }`}
+                      onClick={(e) => {
+                        if (selectedPlace.action_link === "#") e.preventDefault();
+                      }}
+                    >
+                      {selectedPlace.action_link === "#" ? (
+                        <Clock className="h-5 w-5" />
+                      ) : selectedPlace.action_link ? (
+                        <ConciergeBell className="h-5 w-5" />
+                      ) : (
+                        <MapPin className="h-5 w-5" />
+                      )}
+                      {selectedPlace.action_text || t.openInMaps}
+                    </a>
+                  )}
+                </div>
+              </Card>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

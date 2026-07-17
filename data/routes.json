@@ -58,5 +58,20 @@
     "recommendation": "Book spa treatments in advance. Start early with a hammam, then slow the pace with lunch and gardens.",
     "best_time": "9:00 AM - 3:00 PM",
     "difficulty": "Easy"
+  },
+  {
+    "id": 5,
+    "name": "First Day Essentials Checklist",
+    "description": "The ultimate onboarding route for your first day. Get cash, a SIM card, water, and enjoy an easy, authentic first meal.",
+    "duration": "2 hours",
+    "stops": [
+      "Hotel Ali Currency Exchange",
+      "Orange Telecom Store",
+      "Carrefour Market",
+      "Le Jardin"
+    ],
+    "recommendation": "Do this on your first afternoon! Getting your dirhams and a SIM card early will save you a lot of hassle for the rest of your trip.",
+    "best_time": "1:00 PM - 5:00 PM",
+    "difficulty": "Easy"
   }
 ]
