@@ -28,7 +28,6 @@ import {
 import { Card } from "@/components/ui/card";
 import InteractiveMap from "@/components/InteractiveMap";
 import CurrencyConverter from "@/components/CurrencyConverter";
-import WeatherWidget from "@/components/WeatherWidget";
 import { track } from "@vercel/analytics";
 import placesData from "../../../data/places.json";
 import routesData from "../../../data/routes.json";
@@ -58,6 +57,7 @@ interface Place {
   action_link?: string;
   action_text?: string;
   in_house?: boolean;
+  is_order_system?: boolean;
 }
 
 interface Route {
@@ -609,9 +609,6 @@ export default function Home() {
             >
               {currentTab === "welcome" && (
             <div className="space-y-6 p-4 md:p-6">
-              <div className="mx-auto max-w-6xl">
-                <WeatherWidget />
-              </div>
               <section className="mx-auto grid max-w-6xl gap-4 lg:grid-cols-[1.1fr_0.9fr]">
                 <div className="rounded-lg bg-white/90 p-5 shadow-sm ring-1 ring-[#E0D5C7]">
                   <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-[#B85C3C]">

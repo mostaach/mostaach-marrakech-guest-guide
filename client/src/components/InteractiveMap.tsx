@@ -24,6 +24,7 @@ interface Place {
   action_link?: string;
   action_text?: string;
   in_house?: boolean;
+  is_order_system?: boolean;
 }
 
 interface InteractiveMapProps {
